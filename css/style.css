@@ -11,6 +11,7 @@
 }
 .encabezado, .listh, a:visited, a:link {
     background-color: black;
+
     height: 70px;
     display: flex;
     list-style: none;
