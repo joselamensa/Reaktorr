@@ -68,6 +68,11 @@
 .xfit {
     background-color: white;
 }
+
+.galeriax {
+    display: flex;
+    
+}
 .eventos {
     background-color: black;
 }
