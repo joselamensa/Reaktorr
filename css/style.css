@@ -9,19 +9,6 @@
 .cuerpo {
     background-color: black;
 }
-.encabezado, .listh, a:visited, a:link {
-    background-color: black;
-
-    height: 70px;
-    display: flex;
-    list-style: none;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    gap: 160px;
-    padding: 0px;
-    margin-left: -15px;
-}
 /* IDEA
  .encabezado {
     border-bottom:  2px solid yellow;
