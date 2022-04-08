@@ -6,9 +6,7 @@
     font-family: sans-serif;
     color: #fecc00;
 }
-.cuerpo {
-    background-color: black;
-}
+
 /* IDEA
  .encabezado {
     border-bottom:  2px solid yellow;
@@ -79,4 +77,5 @@
 /* FOOTER */
 .footer {
     text-align: center;
+    background-color: black;
 }
