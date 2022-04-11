@@ -12,6 +12,9 @@
     border-bottom:  2px solid yellow;
 }
 */
+.navbar {
+    color: #fecc00;
+}
 
  /* HOME PAGE */
 .product {
@@ -42,10 +45,15 @@
     grid-area: 2 / 2 / 2 / 3; 
 }
 
+/*PAGINA EVENTOS */
 
-/* PAGINA BEBIDAS */ 
+.eventos {
+    background-color: black;
+}
 
-.bebidas {
+/*PAGINA SHOP ONLINE*/ 
+
+.shop {
     background-color: black;
 }
 
@@ -55,24 +63,7 @@
     background-color: white;
 }
 
-.galeriax {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
 
-.item {
-    padding: 0 100px;
-}
-
-/*PAGINA EVENTOS */
-
-.eventos {
-    background-color: black;
-}
 
 /* FOOTER */
 .footer {
