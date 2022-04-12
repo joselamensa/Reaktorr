@@ -7,16 +7,31 @@
     color: #fecc00;
 }
 
-/* IDEA
- .encabezado {
-    border-bottom:  2px solid yellow;
-}
-*/
-.navbar {
-    color: #fecc00;
-}
 
  /* HOME PAGE */
+  
+  .typing-demo {
+    width: 22ch;
+    animation: typing 5s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+    color: black;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
 .product {
     width: 100%;
     height: 800px;
@@ -35,7 +50,7 @@
     justify-content: center;
     align-content: center;
 }
-.divproducto {
+.wrapper {
     grid-column: 2/3 ;
     grid-row: 1/2 ;
     justify-self: center;
@@ -56,6 +71,11 @@
 .shop {
     background-color: black;
 }
+/*.col:hover {
+    height: 792px;
+    width: 268px;
+    transition: all 700ms;
+}*/
 
 /* PAGINA X FIT */
 
@@ -69,4 +89,5 @@
 .footer {
     text-align: center;
     background-color: black;
+    color: #fecc00;
 }
