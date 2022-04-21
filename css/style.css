@@ -63,6 +63,14 @@
 .eventos {
     background-color: black;
 }
+.eventos h1 {
+  color: red;
+}
+.eventos ul {
+  color: aqua;
+  list-style: none;
+}
+
 
 /*PAGINA SHOP ONLINE*/ 
 
