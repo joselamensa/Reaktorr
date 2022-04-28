@@ -73,6 +73,9 @@ margin-top: 30px;
 .shop {
     background-color: black;
 }
+.container-xxl {
+  margin-top: 40px;
+}
 /*.col:hover {
     height: 792px;
     width: 268px;
