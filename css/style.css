@@ -66,6 +66,7 @@
 }
 .eeventos {
 margin-top: 30px;
+margin-bottom: 30px;
 }
 
 /*PAGINA SHOP ONLINE*/ 
@@ -85,7 +86,34 @@ margin-top: 30px;
 /* PAGINA X FIT */
 
 .xfit {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 100%);
+}
+.sabes {
+  color: #43ac34;
+  -webkit-animation: colorchange 15s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    color: #48E645;
+  }
+  20% {
+    color: #04E000;
+  }
+  40% {
+    color: #026100;
+  }
+  60% {
+    color: #1E611D;
+  }
+  80% {
+    color: #03AD00;
+  }
+}
+.xxfit {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 /* Sobre nosotros*/
