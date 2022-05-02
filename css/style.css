@@ -37,7 +37,7 @@
     height: 800px;
     text-align: center;
     background: rgb(254,204,0);
-    background: linear-gradient(180deg, rgba(254,204,0,1) 0%, rgba(250,201,1,1) 63%, rgba(131,131,131,1) 100%);
+    background: linear-gradient(180deg, rgba(254,204,0,1) 0%, rgba(250,201,1,1) 63%, rgb(131, 131, 131) 100%);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -74,7 +74,7 @@ margin-bottom: 30px;
 .shop {
     background-color: black;
 }
-.container-xxl {
+.botellas {
   margin-top: 40px;
 }
 
