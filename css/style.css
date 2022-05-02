@@ -77,11 +77,6 @@ margin-bottom: 30px;
 .container-xxl {
   margin-top: 40px;
 }
-/*.col:hover {
-    height: 792px;
-    width: 268px;
-    transition: all 700ms;
-}*/
 
 /* PAGINA X FIT */
 
@@ -91,10 +86,10 @@ margin-bottom: 30px;
 }
 .sabes {
   color: #43ac34;
-  -webkit-animation: colorchange 15s infinite alternate;
+  animation: colorchange 15s infinite alternate;
 }
 
-@-webkit-keyframes colorchange {
+@keyframes colorchange {
   0% {
     color: #48E645;
   }
