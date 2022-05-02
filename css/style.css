@@ -68,14 +68,17 @@
 margin-top: 30px;
 margin-bottom: 30px;
 }
+.heventos {
+  margin-top: 20px;
+}
 
 /*PAGINA SHOP ONLINE*/ 
 
-.shop {
-    background-color: black;
-}
 .botellas {
-  margin-top: 40px;
+  margin-top: 15px;
+}
+.hshoponline {
+  margin-bottom: 10px;
 }
 
 /* PAGINA X FIT */
