@@ -118,7 +118,10 @@ margin-bottom: 30px;
 
 /* Sobre nosotros*/
 .aboutus {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
+.sobrenosotros {
+  background-color: #32393f;
+}
 /* FOOTER */
