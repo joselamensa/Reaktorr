@@ -1,7 +1,14 @@
-function agregar() {
-    document.getElementById("agregado").innerHTML = " Añadido 1 unidad";
-}
+var a = 0;
 
+function agregar() {
+    a = a + 1;
+    document.getElementById("agregado").innerHTML = `Añadido ${a} unidad(es).`;
+}
+/* IDEA
+function borrado() {
+    document.getElementById("agregado").errase();
+} 
+*/
 function validar()
 {
     var usuario = document.getElementById("usuario").value;
