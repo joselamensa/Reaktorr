@@ -37,52 +37,23 @@
     <div class="hshoponline text-center">
       <h2>SHOP ONLINE</h2>
     </div>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-      <div class="col">
-        <div class="card bg-warning text-black h-100">
-          <img src="../imgs/botella/litrodorada.png" class="card-img-top" alt="bot dorada lit">
-          <div class="card-body text-center">
-            <h5 class="card-title text-black">$180</h5>
-            <p class="card-text text-black">Botella 1.5 Litros</p>
-            <button type="button" class="btn btn-dark"  onclick="agregar()">Añadir</button>
-            <p id="agregado"></p>
-          </div>
-        </div>
+    <div class="container">
+      <div class="row">
+          <!-- Elementos generados a partir del JSON -->
+          <main id="items" class="col-sm-8 row"></main>
+          <!-- Carrito -->
+          <aside class="col-sm-4">
+              <h2>Carrito</h2>
+              <!-- Elementos del carrito -->
+              <ul id="carrito" class="list-group"></ul>
+              <hr>
+              <!-- Precio total -->
+              <p class="text-right">Total: <span id="total"></span>&dollar;</p>
+              <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+          </aside>
       </div>
-      <div class="col">
-        <div class="card bg-warning text-black h-100">
-          <img src="../imgs/botella/medio dorada.png" class="card-img-top" alt="bot dorada 500cc">
-          <div class="card-body text-center">
-            <h5 class="card-title text-black">$90</h5>
-            <p class="card-text text-black">Botella 500ml</p>
-            <button type="button" class="btn btn-dark">Añadir</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-warning text-black h-100">
-          <img src="../imgs/xfit/botellaxfit.png" class="card-img-top" alt="bot xfit 500cc">
-          <div class="card-body text-center">
-            <h5 class="card-title text-black">$90</h5>
-            <p class="card-text text-black">Botella 500ml</p>
-            <button type="button" class="btn btn-dark">Añadir</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card bg-warning text-black h-100">
-          <img src="../imgs/xfit/litroxfit.png" class="card-img-top" alt="bot xfit litro">
-          <div class="card-body text-center">
-            <h5 class="card-title text-black">$150</h5>
-            <p class="card-text text-black">Botella 1.5 Litros</p>
-            <button type="button" class="btn btn-dark">Añadir</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-      </div>
-    </div>
-
+  </div>
+  
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
