@@ -4,6 +4,11 @@ function agregar() {
     a = a + 1;
     document.getElementById("agregado").innerHTML = `Añadido ${a} unidad(es).`;
 }
+
+
+// SOBRE NOSOTROS 
+
+
 function validar()
 {
     var usuario = document.getElementById("usuario").value;
@@ -14,11 +19,18 @@ function validar()
         window.location= "./personaldata.html";
     }
     else
-    {
-        document.getElementById("incorrec").innerHTML = "Contraseña incorrecta";
+    {   swal({
+            title: "Contraseña incorrecta",
+            text: "Intente de nuevo",
+            icon: "error",
+            button: "Atrás",
+          });
     }
 
 }
+
+
+// SHOP ONLINE
 document.addEventListener('DOMContentLoaded', () => {
 
     // Variables
@@ -58,11 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMbotonVaciar = document.querySelector('#boton-vaciar');
     const miLocalStorage = window.localStorage;
 
-    // Funciones
-
-    /**
-    * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
-    */
+    // SHOP NOW CARRITO
     function renderizarProductos() {
         baseDeDatos.forEach((info) => {
             // Estructura
@@ -98,10 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
             DOMitems.appendChild(miNodo);
         });
     }
-
-    /**
-    * Evento para añadir un producto al carrito de la compra
-    */
     function anyadirProductoAlCarrito(evento) {
         // Anyadimos el Nodo a nuestro carrito
         carrito.push(evento.target.getAttribute('marcador'))
@@ -111,27 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
         guardarCarritoEnLocalStorage();
     }
 
-    /**
-    * Dibuja todos los productos guardados en el carrito
-    */
     function renderizarCarrito() {
-        // Vaciamos todo el html
         DOMcarrito.textContent = '';
-        // Quitamos los duplicados
         const carritoSinDuplicados = [...new Set(carrito)];
-        // Generamos los Nodos a partir de carrito
         carritoSinDuplicados.forEach((item) => {
-            // Obtenemos el item que necesitamos de la variable base de datos
             const miItem = baseDeDatos.filter((itemBaseDatos) => {
-                // ¿Coincide las id? Solo puede existir un caso
                 return itemBaseDatos.id === parseInt(item);
             });
-            // Cuenta el número de veces que se repite el producto
+            // Contar las veces que se repite el producto
             const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-                // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
                 return itemId === item ? total += 1 : total;
             }, 0);
-            // Creamos el nodo del item del carrito
             const miNodo = document.createElement('li');
             miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
             miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
@@ -142,19 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
             miBoton.style.marginLeft = '1rem';
             miBoton.dataset.item = item;
             miBoton.addEventListener('click', borrarItemCarrito);
-            // Mezclamos nodos
             miNodo.appendChild(miBoton);
             DOMcarrito.appendChild(miNodo);
         });
-        // Renderizamos el precio total en el HTML
         DOMtotal.textContent = calcularTotal();
     }
 
-    /**
-    * Evento para borrar un elemento del carrito
-    */
     function borrarItemCarrito(evento) {
-        // Obtenemos el producto ID que hay en el boton pulsado
         const id = evento.target.dataset.item;
         // Borramos todos los productos
         carrito = carrito.filter((carritoId) => {
@@ -166,14 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
         guardarCarritoEnLocalStorage();
 
     }
-
-    /**
-     * Calcula el precio total teniendo en cuenta los productos repetidos
-     */
+    // Calcular precio final
     function calcularTotal() {
-        // Recorremos el array del carrito 
         return carrito.reduce((total, item) => {
-            // De cada elemento obtenemos su precio
             const miItem = baseDeDatos.filter((itemBaseDatos) => {
                 return itemBaseDatos.id === parseInt(item);
             });
@@ -182,13 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 0).toFixed(2);
     }
 
-    /**
-    * Varia el carrito y vuelve a dibujarlo
-    */
     function vaciarCarrito() {
-        // Limpiamos los productos guardados
+        // Limpiar productos guardados
         carrito = [];
-        // Renderizamos los cambios
         renderizarCarrito();
         // Borra LocalStorage
         localStorage.clear();
@@ -200,9 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function cargarCarritoDeLocalStorage () {
-        // ¿Existe un carrito previo guardado en LocalStorage?
         if (miLocalStorage.getItem('carrito') !== null) {
-            // Carga la información
             carrito = JSON.parse(miLocalStorage.getItem('carrito'));
         }
     }
@@ -223,10 +200,9 @@ function onSignIn(googleUser) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   }
-  function signOut() {
+function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');
+        console.log('User signed out.');
     });
   }
-  
