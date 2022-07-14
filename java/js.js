@@ -1,11 +1,3 @@
-var a = 0;
-
-function agregar() {
-    a = a + 1;
-    document.getElementById("agregado").innerHTML = `Añadido ${a} unidad(es).`;
-}
-
-
 // SOBRE NOSOTROS 
 
 
@@ -70,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMbotonVaciar = document.querySelector('#boton-vaciar');
     const miLocalStorage = window.localStorage;
 
-    // SHOP NOW CARRITO
+    // SHOP Online CARRITO
     function renderizarProductos() {
         baseDeDatos.forEach((info) => {
             // Estructura
@@ -107,11 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     function anyadirProductoAlCarrito(evento) {
-        // Anyadimos el Nodo a nuestro carrito
         carrito.push(evento.target.getAttribute('marcador'))
-        // Actualizamos el carrito 
         renderizarCarrito();
-        // Actualizamos el LocalStorage
+        // Actualiza el LocalStorage
         guardarCarritoEnLocalStorage();
     }
 
@@ -122,14 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const miItem = baseDeDatos.filter((itemBaseDatos) => {
                 return itemBaseDatos.id === parseInt(item);
             });
-            // Contar las veces que se repite el producto
+            // Suma de producto
             const numeroUnidadesItem = carrito.reduce((total, itemId) => {
                 return itemId === item ? total += 1 : total;
             }, 0);
             const miNodo = document.createElement('li');
             miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
             miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
-            // Boton de borrar
+            // Boton "X" en productos del carrito
             const miBoton = document.createElement('button');
             miBoton.classList.add('btn', 'btn-danger', 'mx-5');
             miBoton.textContent = 'X';
@@ -148,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito = carrito.filter((carritoId) => {
             return carritoId !== id;
         });
-        // volvemos a renderizar
         renderizarCarrito();
         // Actualizamos el LocalStorage
         guardarCarritoEnLocalStorage();
@@ -193,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrito();
 });
 
+
+// INICIAR SESIÓN CON GOOGLE
+
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -206,3 +198,8 @@ function signOut() {
     });
     auth2.disconnect();
 }
+
+    if (onSignIn = true) {
+        document.getElementById(`boton-comprar`).disabled = true;
+    } else
+    document.getElementById(`boton-comprar`).disabled = false;
