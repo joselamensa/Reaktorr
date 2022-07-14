@@ -205,7 +205,4 @@ function signOut() {
     auth2.signOut().then(function () {
     });
     auth2.disconnect();
-  }
-
-
-  // API
+}
