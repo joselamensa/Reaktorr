@@ -25,7 +25,7 @@ function validar()
 // SHOP ONLINE
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Variables
+    // Constantes y variables
     const baseDeDatos = [
         {
             id: 1,
@@ -198,8 +198,3 @@ function signOut() {
     });
     auth2.disconnect();
 }
-
-    if (onSignIn = true) {
-        document.getElementById(`boton-comprar`).disabled = true;
-    } else
-    document.getElementById(`boton-comprar`).disabled = false;
