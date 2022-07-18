@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return itemId === item ? total += 1 : total;
             }, 0);
             const miNodo = document.createElement('li');
-            miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+            miNodo.classList.add('list-group-item', 'text-right', 'mx-2', `porfa`);
             miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
             // Boton "X" en productos del carrito
             const miBoton = document.createElement('button');
@@ -183,6 +183,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+const collection = document.getElementById(`connectedo83bnk2uwqdu`);
+
+
+function desaparecer () {
+    if (collection === `Signed in`)  {
+        document.getElementById("mp").style.display = "block";
+    } else {
+        document.getElementById("mp").style.display = "none";
+    }
+}
+desaparecer ();
 // INICIAR SESIÓN CON GOOGLE
 
 function onSignIn(googleUser) {
