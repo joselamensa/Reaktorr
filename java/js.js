@@ -182,18 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrito();
 });
 
+const gola = document.getElementById(`total`);
 
-const collection = document.getElementsByTagName(`span`);
 
-
-function desaparecer () {
-    if (collection === `Signed in`)  {
+    do {
         document.getElementById("mp").style.display = "block";
-    } else {
-        document.getElementById("mp").style.display = "none";
-    }
-}
-desaparecer ();
+    } while (gola > `0.00`);
+
+//  document.getElementById("mp").style.display = "block";
+
 // INICIAR SESIÓN CON GOOGLE
 
 function onSignIn(googleUser) {
