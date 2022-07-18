@@ -182,15 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrito();
 });
 
-const gola = document.getElementById(`total`);
 
 
-    do {
+    if (collection === `Signed in`)  {
         document.getElementById("mp").style.display = "block";
-    } while (gola > `0.00`);
+    } else {
+        document.getElementById("mp").style.display = "none";
+    }
 
-//  document.getElementById("mp").style.display = "block";
-
+desaparecer ();
 // INICIAR SESIÓN CON GOOGLE
 
 function onSignIn(googleUser) {
