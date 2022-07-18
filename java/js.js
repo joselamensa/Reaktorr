@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const collection = document.getElementById(`connecteddznitdxxy9l3`);
+const collection = document.getElementsByTagName(`span`);
 
 
 function desaparecer () {
