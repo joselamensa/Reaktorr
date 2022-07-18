@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const collection = document.getElementById(`connectedo83bnk2uwqdu`);
+const collection = document.getElementById(`connecteddznitdxxy9l3`);
 
 
 function desaparecer () {
