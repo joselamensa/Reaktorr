@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodoBoton.textContent = '+';
             miNodoBoton.setAttribute('marcador', info.id);
             miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+            miNodoBoton.addEventListener(`click`, anyadirBotonCompra);
             // Insertamos
             miNodoCardBody.appendChild(miNodoImagen);
             miNodoCardBody.appendChild(miNodoTitle);
@@ -97,6 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodo.appendChild(miNodoCardBody);
             DOMitems.appendChild(miNodo);
         });
+    }
+    function anyadirBotonCompra () {
+        document.getElementById("mp").style.display = "block";
     }
     function anyadirProductoAlCarrito(evento) {
         carrito.push(evento.target.getAttribute('marcador'))
@@ -121,15 +125,21 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
             // Boton "X" en productos del carrito
             const miBoton = document.createElement('button');
-            miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+            miBoton.classList.add('btn', 'btn-danger', 'mx-7');
             miBoton.textContent = 'X';
             miBoton.style.marginLeft = '1rem';
             miBoton.dataset.item = item;
             miBoton.addEventListener('click', borrarItemCarrito);
+            miBoton.addEventListener(`click`, eliminarmp);
             miNodo.appendChild(miBoton);
             DOMcarrito.appendChild(miNodo);
         });
         DOMtotal.textContent = calcularTotal();
+    }
+    function eliminarmp () {
+        if (Number(document.getElementById('total').innerText) === 0.00) {
+            document.getElementById("mp").style.display = "none";
+    }
     }
 
     function borrarItemCarrito(evento) {
@@ -182,15 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrito();
 });
 
-
-
-    if (collection === `Signed in`)  {
-        document.getElementById("mp").style.display = "block";
-    } else {
+if (Number(document.getElementById('total').innerText) === 0.00) {
         document.getElementById("mp").style.display = "none";
-    }
+}
 
-desaparecer ();
+
 // INICIAR SESIÓN CON GOOGLE
 
 function onSignIn(googleUser) {
