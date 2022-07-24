@@ -190,12 +190,16 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarCarritoDeLocalStorage();
     renderizarProductos();
     renderizarCarrito();
+    dale ();
 });
 
-if (Number(document.getElementById('total').innerText) === 0.00) {
-        document.getElementById("mp").style.display = "none";
+function dale () {
+    if (Number(document.getElementById('total').innerText) === 0.00) {
+            document.getElementById("mp").style.display = "none";
+    } else {
+        document.getElementById("mp").style.display = "block";
+    }
 }
-
 
 // INICIAR SESIÓN CON GOOGLE
 
