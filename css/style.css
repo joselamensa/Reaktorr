@@ -137,10 +137,39 @@ margin-bottom: 30px;
 /*PAGINA OCULTA*/
 
 .bienvenidos {
-  margin: 400px 1px 400px 1px;
+  margin: 50px 1px 50px 1px;
 }
 
 .cerrarsesion {
   color: black;
   text-decoration: none;
+}
+.calculadora {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #bfbfbf;
+  width: 350px;
+  height: 450px;
+}
+.calculadora td button {
+  font-family:sans-serif;
+  color: #00e7d4;
+  display: block;
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
+  background-color: white;
+}
+#resultado {
+  font-family: sans-serif;
+  display: block;
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 100px;
+  line-height: 100px;
+  background-color: #fff;
+  border-radius: 1px;
 }
