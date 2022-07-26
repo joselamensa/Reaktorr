@@ -307,3 +307,4 @@ function resolver() {
   resetear();
   resultado.textContent = res;
 }
+
